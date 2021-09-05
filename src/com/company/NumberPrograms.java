@@ -42,6 +42,33 @@ public class NumberPrograms {
         return count ;
     }
 
+    boolean isPeterson(int number){
+        int tempNumber = number, sum = 0 ;
+
+        while(tempNumber > 0){
+            int remainder = tempNumber % 10 ;
+            sum += factorial(remainder);
+            tempNumber /= 10 ;
+        }
+        if ( sum == number){
+            System.out.println("Given Number is Peterson Number");
+            return true ;
+        }else{
+            System.out.println("Given Number is not Peterson Number");
+            return false ;
+        }
+
+    }
+
+    int factorial(int number) {
+        int factorialNumber = 1;
+        for(int i = number ; i > 0 ; i--){
+            factorialNumber *= i ;
+        }
+        return factorialNumber ;
+    }
+
+
 
 
 }

@@ -6,6 +6,9 @@ public class Main {
 	    NumberPrograms numberPrograms = new NumberPrograms();
         numberPrograms.reverseNumber(123456789);
         numberPrograms.isAutoMorphic(625);
+        numberPrograms.isPeterson(145);
+
+
 
     }
 }
