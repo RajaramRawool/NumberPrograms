@@ -3,6 +3,7 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+	    NumberPrograms numberPrograms = new NumberPrograms();
+        System.out.println(numberPrograms.reverseNumber(123456789));
     }
 }
