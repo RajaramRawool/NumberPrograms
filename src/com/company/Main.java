@@ -4,6 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
 	    NumberPrograms numberPrograms = new NumberPrograms();
-        System.out.println(numberPrograms.reverseNumber(123456789));
+        numberPrograms.reverseNumber(123456789);
+        numberPrograms.isAutoMorphic(625);
+
     }
 }
