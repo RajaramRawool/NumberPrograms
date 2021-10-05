@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ArrayProblems {
     public static void main(String[] args) {
 
-        int[] array = { 2, 2, 3, 8, 5, 5, 6, 5};
+        int[] array = { 1, 2, 2, 3, 5, 7, 6, 5, 9 };
 //        copyingArray(array);
 //        repeatedElements(array);
 //        leftRotateElement(array);
@@ -16,13 +16,93 @@ public class ArrayProblems {
 //        oddPositionElements(array);
 //        smallestArrayElement(array);
 //        numberOfElement(array);
+//        rightRotateElements(array ,3);
+//        sortElementsAscending(array);
+//        sortElementsDescending(array);
+//        thirdAndSecondLargestNumber(array);
+        removingDuplicateNumber(array);
     }
 
+    private static void removingDuplicateNumber(int[] array) {
+        int[] temp = new int[array.length];
+        int j = 0;
+        boolean notDuplicate = false;
+        for (int i = 0 ; i < array.length ; i++) {
+            for (int k = 0 ; k < array.length ; k++) {
+                if ((array[i] != array[k]) && (i != k)) {
+                    notDuplicate = true;
+                }else if(i == k) {
+                }else {
+                    notDuplicate = false;
+                    break;
+                }
+            }
+                if (notDuplicate) {
+                    temp[j++] = array[i];
+                }
+        }
+        for (int l : temp) {
+            if (l != 0)
+            System.out.print(l + " ");
+        }
+    }
+
+    private static void thirdAndSecondLargestNumber(int[] array) {
+        for (int i = 0 ; i < array.length ; i++) {
+            for (int j = 0 ; j < (array.length - 1) ; j++) {
+                if (array[j] < array[j+1]) {
+                    int temp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = temp;
+                }
+            }
+        }
+        System.out.println("Third Largest Number :- " + array[2]);
+        System.out.println("Second Largest Number :- " + array[1]);
+    }
+
+    private static void sortElementsDescending(int[] array) {
+        for (int j = 0 ; j < array.length ; j++){
+            for (int i = 0; i < (array.length - 1); i++) {
+                if (array[i] < array[i + 1]) {
+                    int temp = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = temp;
+                }
+            }
+        }
+        for (int i : array)
+            System.out.print(i + " ");
+     }
+
+    private static void sortElementsAscending(int[] array) {
+        for (int i = 0 ; i < array.length -1  ; i++ ) {
+            if (array[i] > array[i+1]){
+                int temp = array[i+1];
+                array[i+1] = array[i];
+                array[i] = temp;
+            }
+        }
+        for ( int i : array)
+            System.out.print(i + " ");
+    }
+
+    private static void rightRotateElements(int[] array, int n) {
+        for (int count = 0 ; count < n ; count++ ){
+            int temp = array[array.length - 1];
+            for (int i = array.length - 1; i > 0; i--) {
+                array[i] = array[i - 1];
+            }
+            array[0] = temp;
+        }
+            for (int j : array) {
+                System.out.print(j + " ");
+            }
+    }
 
     private static void numberOfElement(int[] array) {
         System.out.println();
     }
-
 
     private static void smallestArrayElement(int[] array) {
         int min = array[0];
