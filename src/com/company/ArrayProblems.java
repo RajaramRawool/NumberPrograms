@@ -20,7 +20,29 @@ public class ArrayProblems {
 //        sortElementsAscending(array);
 //        sortElementsDescending(array);
 //        thirdAndSecondLargestNumber(array);
-        removingDuplicateNumber(array);
+//        removingDuplicateNumber(array);
+//        printingOddAndEvenNumbers(array);
+    }
+
+    private static void printingOddAndEvenNumbers(int[] array) {
+        int[] odd = new int[array.length];
+        int[] even = new int[array.length];
+        int j = 0;
+        int k = 0;
+        for (int i = 0 ; i < array.length ; i++) {
+            if (array[i] == 0){
+
+            } else if (array[i]%2 == 0) {
+                even[j++] = array[i];
+            }else {
+                odd[k++] = array[i];
+            }
+        }
+        for (int o : odd)
+            System.out.print(o + " ");
+        System.out.println();
+        for (int e : even)
+            System.out.print(e + " ");
     }
 
     private static void removingDuplicateNumber(int[] array) {
